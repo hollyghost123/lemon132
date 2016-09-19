@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en" class="0" >
+<head>
+    <meta charset="UTF-8">
+    <title>dragJs_demo</title>
+</head>
+<style>
+	.dustbin{
+		width: 100%;
+		height: 300px;
+		background: #ccc;
+	}
+	.draglist{
+		width: 100%;
+		height: 40px;
+		line-height: 40px;
+		background: #ccc;
+        margin:10px 0;
+        text-align: center;
+        overflow: hidden;
+	}
+	.space{
+		width: 100%;
+		height: 10px;
+	}
+	.drag_active{
+		background: blue;
+	}
+	.dragremind{
+		width: 100px;
+		height: 800px;
+	}
+	.dragbox,.dragbox1,.dragbox2{
+        width: 300px;
+        margin:30px auto;
+    }
+    p{
+        text-align: center;
+        padding: 0;
+        margin:0;
+    }
+   /* .dragbox .draglist{
+        margin:0;
+    }*/
+</style>
+<body>
+    <p>drag1</p>
+<div class="dragbox">
+    <div class="draglistbox">
+    	<div class="draglist" >list1</div>
+    	<div class="space"></div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list2</div>
+    	<div class="space"></div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list3</div>
+    	<div class="space"></div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list4</div>
+    	<div class="space"></div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list5</div>
+    	<div class="space"></div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list6</div>
+    	<div class="space"></div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list7</div>
+    	<div class="space"></div>
+    </div>
+</div>
+ <p>drag2</p>
+<div class="dragbox1" >
+    <div class="draglistbox">
+    	<div class="draglist" >list1</div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list2</div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list3</div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list4</div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list5</div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list6</div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list7</div>
+    </div>
+</div>
+ <p>drag3</p>
+<div class="dragbox2" >
+    <div class="draglistbox">
+    	<div class="draglist" >list1</div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list2</div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list3</div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list4</div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list5</div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list6</div>
+    </div>
+    <div class="draglistbox">
+    	<div class="draglist" >list7</div>
+    </div>
+</div>
+
+</body>
+</html>
+<script src="dragJs.js"></script>
+<script>
+
+var drag1 = new dragJs({
+	parent: ".dragbox",
+	drag_arr: [1, 2, 3, 4, 5, 6, 7],
+	_dragstart: function(_this, e) {
+	},
+	_dragover: function(_this, e) {},
+	_drop: function(_this, e) {
+	},
+	_mouseenter: function(_this, e) {
+	},
+	_mouseleave: function(_this, e) {
+	},
+	space_insert: true,
+	spaceClass: "space",
+	replace:true
+});
+
+var drag2 = new dragJs({
+	parent: ".dragbox1",
+	drag_arr: [1, 2, 3, 4, 5, 6, 7],
+	replace:true
+});
+
+var drag3 = new dragJs({
+	parent: ".dragbox2",
+	drag_arr: [1, 2, 3, 4, 5, 6, 7],
+});
+</script>
