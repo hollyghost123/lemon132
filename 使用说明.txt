@@ -1,0 +1,36 @@
+说明1 : 本插件使用H5自带属性实现，ie8等不支持h5属性的浏览器不做支持
+说明2 : 本插件完全开源如有疑问 请联系 qq 289233985
+说明详情：
+
+使用如下
+var aa = new dragJs({
+	parent: ".dragbox",
+	drag_arr: [1, 2, 3, 4, 5, 6, 7],
+	_dragstart: function(_this, e) {
+	},
+	_dragover: function(_this, e) {},
+	_drop: function(_this, e) {
+	},
+	_mouseenter: function(_this, e) {
+	},
+	_mouseleave: function(_this, e) {
+	},
+	space_insert: true,
+	spaceClass: "space",
+	replace:true
+});
+其中 参数
+parent :  外层包裹拖拽元素的父容器
+drag_arr : 操控数组，默认为空。与操控dom相对应 如果操控dom元素改变 ，数组会相应给出改变
+
+如下回掉方法
+_dragstart : 开始拖拽元素的回掉方法 
+_dragover : 拖拽过程通过目标元素的回掉方法
+_drop : 拖拽到目标元素以后并释放的回掉方法
+_mouseenter : 鼠标指针进入拖拽区域的回掉方法 由于ie对于mouse方法和拖拽有冲突 此处对ie不做支持
+_mouseleave : 鼠标指针离开拖拽区域的回掉方法  由于ie对于mouse方法和拖拽有冲突 此处对ie不做支持
+所有的回掉方法中都有两个参数  _this 为当前实例的对象 e 为事件对象   _this 中  _this.dragWrap 外层包裹元素  _this.startObj 正在拖拽的元素 this.enterObj 拖拽过程中以及拖拽释放以后的目标元素 
+
+space_insert : 是否用间隔插入 默认为false，当此变量为true时请传入间隔插入的类名，否则无效  demo中给出相应实例
+spaceClass : 间隔插入的类名
+replace : 当拖拽释放的目标元素非间隔元素时，是否使用替换方式，默认为false
